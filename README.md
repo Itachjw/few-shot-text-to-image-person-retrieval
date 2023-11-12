@@ -1,8 +1,8 @@
 # few-shot-text-to-image-person-retrieval
-The data and loss of M-CLIP: Multi-view Contrastive Learning for Few-Shot Text-to-Image Person Retrieval
+The data and losses of M-CLIP: Multi-view Contrastive Learning for Few-Shot Text-to-Image Person Retrieval
 
 -------data folder:
-There are the json files of three datasets under the N-way 1-shot setting.
+There are the json files of three datasets for N-way 1-shot setting.
 The images of three datasets can be download from the official code.
 
 -------loss.py
