@@ -27,10 +27,8 @@ def hard_loss(t2i_cosine_theta1, t2i_cosine_theta2, t2i_cosine_theta3, identity_
     label_dist = identity_labels - identity_labels.t()
     labels = (label_dist == 0).float()
 
-    pos = torch.min(torch.min(sim1, sim2), sim3)
-    neg = torch.max(torch.max(sim1, sim2), sim3)
-
-    #pdb.set_trace()
+    pos = torch.min(torch.min(t2i_cosine_theta1, t2i_cosine_theta2), t2i_cosine_theta3)
+    neg = torch.max(torch.max(t2i_cosine_theta1, t2i_cosine_theta2), t2i_cosine_theta3)
    
     t2i_cosine_theta = labels*pos + (1-labels)*neg
     sim_matrix = F.softmax(logit_scale*t2i_cosine_theta, dim=1)*F.softmax(logit_scale*t2i_cosine_theta, dim=0)
